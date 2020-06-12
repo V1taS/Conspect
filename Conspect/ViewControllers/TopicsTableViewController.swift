@@ -76,26 +76,15 @@ class TopicsTableViewController: UITableViewController {
             let additionVC = segue.destination as! AdditionViewController
             //additionVC.subjects = subjects
             additionVC.indexOfSubjects = indexOfSubjects
-            additionVC.indexOfTopics = sender as? Int
-            additionVC.delegate = self
+            additionVC.showContents = 2
         default:
             print(segue.identifier ?? "")
         }
     }
 }
 
-extension TopicsTableViewController: AdditionViewControllerDelegate {
-    func returnAdditionData(name: String, description: String) {
-        self.subjects = DataManager.shared.subjects
-        self.name = subjects[indexOfSubjects].name
-        self.topics = subjects[indexOfSubjects].topics
-        self.title = self.name
-        tableView.reloadData()
-    }
-}
-
 extension TopicsTableViewController: DescriptionViewControllerDelegate {
-    func returnDescriptionData(name: String, description: String) {
+    func setNewNameOfCell(nameOfCell: String) {
         self.subjects = DataManager.shared.subjects
         self.name = subjects[indexOfSubjects].name
         self.topics = subjects[indexOfSubjects].topics

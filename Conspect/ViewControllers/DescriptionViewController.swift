@@ -9,7 +9,7 @@
 import UIKit
 
 protocol DescriptionViewControllerDelegate {
-    func returnDescriptionData(name: String, description: String)
+    func setNewNameOfCell(nameOfCell: String)
 }
 
 class DescriptionViewController: UIViewController {
