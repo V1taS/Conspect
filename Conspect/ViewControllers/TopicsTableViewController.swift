@@ -34,8 +34,7 @@ class TopicsTableViewController: UITableViewController {
         
         name = subjects[indexOfSubjects].name
         topics = subjects[indexOfSubjects].topics
-        self.title = name
-        
+        self.title = name        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -72,25 +71,37 @@ class TopicsTableViewController: UITableViewController {
             //descriptionVC.subjects = subjects
             descriptionVC.indexOfSubjects = indexOfSubjects
             descriptionVC.indexOfTopics = sender as? Int
+            descriptionVC.delegate = self
         case "additionSegue":
             let additionVC = segue.destination as! AdditionViewController
             //additionVC.subjects = subjects
             additionVC.indexOfSubjects = indexOfSubjects
             additionVC.indexOfTopics = sender as? Int
+            additionVC.delegate = self
         default:
             print(segue.identifier ?? "")
         }
     }
-    
-    @IBAction func unwindToTopicViewController(_ unwindSegue: UIStoryboardSegue) {
-//        let sourceViewController = unwindSegue.source as! AdditionViewController
-//        subjects = sourceViewController.subjects
-        
-        subjects = DataManager.shared.subjects
-        name = subjects[indexOfSubjects].name
-        topics = subjects[indexOfSubjects].topics
-        self.title = name
+}
+
+extension TopicsTableViewController: AdditionViewControllerDelegate {
+    func returnAdditionData(name: String, description: String) {
+        self.subjects = DataManager.shared.subjects
+        self.name = subjects[indexOfSubjects].name
+        self.topics = subjects[indexOfSubjects].topics
+        self.title = self.name
         tableView.reloadData()
     }
-    
 }
+
+extension TopicsTableViewController: DescriptionViewControllerDelegate {
+    func returnDescriptionData(name: String, description: String) {
+        self.subjects = DataManager.shared.subjects
+        self.name = subjects[indexOfSubjects].name
+        self.topics = subjects[indexOfSubjects].topics
+        self.title = self.name
+        tableView.reloadData()
+    }
+}
+
+

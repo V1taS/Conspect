@@ -21,7 +21,6 @@
                                 <state key="normal" title="Add topic"/>
                                 <connections>
                                     <action selector="doneButton" destination="ajR-Yt-1Gu" eventType="touchUpInside" id="YDt-gd-F8z"/>
-                                    <segue destination="WGq-0F-wso" kind="unwind" unwindAction="unwindToTopicViewController:" id="BfC-bl-Xu5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-g4-A9d">
@@ -44,7 +43,6 @@
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dk7-GU-Ibu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <exit id="WGq-0F-wso" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="158" y="72"/>
         </scene>

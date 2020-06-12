@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol DescriptionViewControllerDelegate {
+    func returnDescriptionData(name: String, description: String)
+}
+
 class DescriptionViewController: UIViewController {
     
     @IBOutlet var nameLabel: UILabel!
@@ -16,6 +20,8 @@ class DescriptionViewController: UIViewController {
     var subjects: [Subject] = DataManager.shared.subjects
     var indexOfSubjects: Int!
     var indexOfTopics: Int!
+    
+    var delegate: DescriptionViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
