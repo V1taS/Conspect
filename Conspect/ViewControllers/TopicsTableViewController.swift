@@ -58,23 +58,18 @@ class TopicsTableViewController: UITableViewController {
         
         return cell
     }
-        
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "descriptionSegue", sender: indexPath.row)
-    }
-    
+            
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "descriptionSegue":
+            guard let indexPath = tableView.indexPathForSelectedRow  else { return }
             let descriptionVC = segue.destination as! DescriptionViewController
-            //descriptionVC.subjects = subjects
             descriptionVC.indexOfSubjects = indexOfSubjects
-            descriptionVC.indexOfTopics = sender as? Int
+            descriptionVC.indexOfTopics = indexPath.row
             descriptionVC.delegate = self
         case "additionSegue":
             let additionVC = segue.destination as! AdditionViewController
-            //additionVC.subjects = subjects
             additionVC.indexOfSubjects = indexOfSubjects
             additionVC.showContents = 2
         default:

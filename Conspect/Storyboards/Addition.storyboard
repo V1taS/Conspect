@@ -16,9 +16,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPk-aS-Izc">
-                                <rect key="frame" x="97" y="261" width="126" height="46"/>
+                                <rect key="frame" x="133" y="261" width="54" height="46"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <state key="normal" title="Add topic"/>
+                                <state key="normal" title="Add"/>
                                 <connections>
                                     <action selector="doneButton" destination="ajR-Yt-1Gu" eventType="touchUpInside" id="YDt-gd-F8z"/>
                                 </connections>
