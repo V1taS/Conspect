@@ -14,7 +14,6 @@ protocol AdditionViewControllerDelegate {
 
 class AdditionViewController: UIViewController {
     
-    
     @IBOutlet weak var buttonApplyOutlet: UIButton!
     
     @IBOutlet weak var subjectsTextField: UITextField!
@@ -27,14 +26,14 @@ class AdditionViewController: UIViewController {
     var descriptionTextFieldSource: String!
     var descriptionTextViewOutletSource: String!
     
+    var indexOfSubjects: Int!
     var showContents = 0
     
     var delegate: AdditionViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
+           
         hidenContents()
         roundsCorners()
         showContents(showContents)
@@ -59,7 +58,8 @@ class AdditionViewController: UIViewController {
         case 1:
             print("")
         case 2:
-            print("")
+            
+            dismiss(animated: true)
         default:
             delegate.saveChangingDescriptionAndHeader(description: discriptionTextViewOutlet.text, header: discriptionTextField.text ?? "")
         }
