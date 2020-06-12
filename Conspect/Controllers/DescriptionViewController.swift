@@ -86,20 +86,23 @@ class DescriptionViewController: UIViewController {
     
     
     
-    
      // MARK: - Navigation
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let additionVC = segue.destination as? AdditionViewController else { return }
-        additionVC.descriptionOfTopic = descriptionTextView.text
+        additionVC.descriptionTextFieldSource = headerLabel.text
+        additionVC.descriptionTextViewOutletSource = descriptionTextView.text
+        additionVC.showContents = 3
         additionVC.delegate = self
      }
      
 }
 
 extension DescriptionViewController: AdditionViewControllerDelegate {
-    func saveChangingTextInTextView(_ editingText : String) {
-        descriptionTextView.text = editingText
+    func saveChangingDescriptionAndHeader(description: String, header: String) {
+        headerLabel.text = header
+        descriptionTextView.text = description
     }
+    
     
 }
 

@@ -9,13 +9,17 @@
 import UIKit
 
 protocol AdditionViewControllerDelegate {
-    func saveChangingTextInTextView(_ editingText: String)
+    func saveChangingDescriptionAndHeader(description: String, header: String)
 }
 
 
 class AdditionViewController: UIViewController {
     
-    var descriptionOfTopic: String!
+    var descriptionTextFieldSource: String!
+    var descriptionTextViewOutletSource: String!
+    var showContents: Int!
+    
+    
     
     var delegate: AdditionViewControllerDelegate!
 
@@ -27,7 +31,7 @@ class AdditionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        descriptionTextView.text = descriptionOfTopic
+        descriptionTextView.text = descriptionTextFieldSource
         
     }
     
@@ -37,7 +41,7 @@ class AdditionViewController: UIViewController {
     }
     
     @IBAction func addTextViewChanges() {
-        delegate.saveChangingTextInTextView(descriptionTextView.text)
+        delegate.saveChangingDescriptionAndHeader(description: descriptionTextView.text, header: "dwdw")
         dismiss(animated: true)
     }
     
