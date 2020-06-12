@@ -10,7 +10,7 @@ import UIKit
 
 class AdditionViewController: UIViewController {
 
-    var subjects: [Subject] = []
+    var subjects: [Subject] = DataManager.shared.subjects
     var indexOfSubjects: Int!
     var indexOfTopics: Int!
 
@@ -22,16 +22,11 @@ class AdditionViewController: UIViewController {
     
     @IBAction func doneButton() {
         print("Add some topic")
+        DataManager.shared.addTopic(name: "New Name", description: "New description")
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func cancelButton() {
+        dismiss(animated: true)
     }
-    */
-
+    
 }

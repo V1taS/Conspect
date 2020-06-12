@@ -13,7 +13,7 @@ class DescriptionViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var descriptionTextView: UITextView!
     
-    var subjects: [Subject] = []
+    var subjects: [Subject] = DataManager.shared.subjects
     var indexOfSubjects: Int!
     var indexOfTopics: Int!
     

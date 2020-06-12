@@ -16,19 +16,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPk-aS-Izc">
-                                <rect key="frame" x="125.5" y="261" width="69" height="46"/>
+                                <rect key="frame" x="97" y="261" width="126" height="46"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
-                                <state key="normal" title="Done"/>
+                                <state key="normal" title="Add topic"/>
                                 <connections>
                                     <action selector="doneButton" destination="ajR-Yt-1Gu" eventType="touchUpInside" id="YDt-gd-F8z"/>
                                     <segue destination="WGq-0F-wso" kind="unwind" unwindAction="unwindToTopicViewController:" id="BfC-bl-Xu5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHg-g4-A9d">
+                                <rect key="frame" x="114" y="328" width="92" height="46"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelButton" destination="ajR-Yt-1Gu" eventType="touchUpInside" id="iUy-Hp-4o0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="cHg-g4-A9d" firstAttribute="top" secondItem="lPk-aS-Izc" secondAttribute="bottom" constant="21" id="a6X-Pw-i8Y"/>
                             <constraint firstItem="lPk-aS-Izc" firstAttribute="centerY" secondItem="bMJ-zE-O5d" secondAttribute="centerY" id="iuE-e3-uo2"/>
                             <constraint firstItem="lPk-aS-Izc" firstAttribute="centerX" secondItem="bMJ-zE-O5d" secondAttribute="centerX" id="lLL-Qu-R8b"/>
+                            <constraint firstItem="cHg-g4-A9d" firstAttribute="centerX" secondItem="bMJ-zE-O5d" secondAttribute="centerX" id="xbb-TL-I6G"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jFM-PD-dlM"/>
                     </view>

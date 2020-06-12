@@ -10,15 +10,15 @@ import UIKit
 
 class TopicsTableViewController: UITableViewController {
 
-    var subjects: [Subject] = []
-    var indexOfSubjects: Int!
+    var subjects: [Subject] = DataManager.shared.subjects
+    var indexOfSubjects: Int = 0
     
     private var topics: [Topic] = []
     private var name = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         if subjects.count == 0 {
             indexOfSubjects = 0
             subjects = [Subject(name: "Swift",
@@ -27,9 +27,20 @@ class TopicsTableViewController: UITableViewController {
             ])]
         }
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         name = subjects[indexOfSubjects].name
         topics = subjects[indexOfSubjects].topics
         self.title = name
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -58,26 +69,28 @@ class TopicsTableViewController: UITableViewController {
         switch segue.identifier {
         case "descriptionSegue":
             let descriptionVC = segue.destination as! DescriptionViewController
-            descriptionVC.subjects = subjects
+            //descriptionVC.subjects = subjects
             descriptionVC.indexOfSubjects = indexOfSubjects
             descriptionVC.indexOfTopics = sender as? Int
         case "additionSegue":
-            let descriptionVC = segue.destination as! AdditionViewController
-            descriptionVC.subjects = subjects
-            descriptionVC.indexOfSubjects = indexOfSubjects
-            descriptionVC.indexOfTopics = sender as? Int
+            let additionVC = segue.destination as! AdditionViewController
+            //additionVC.subjects = subjects
+            additionVC.indexOfSubjects = indexOfSubjects
+            additionVC.indexOfTopics = sender as? Int
         default:
             print(segue.identifier ?? "")
         }
     }
     
     @IBAction func unwindToTopicViewController(_ unwindSegue: UIStoryboardSegue) {
-        let sourceViewController = unwindSegue.source as! AdditionViewController
-        subjects = sourceViewController.subjects
+//        let sourceViewController = unwindSegue.source as! AdditionViewController
+//        subjects = sourceViewController.subjects
+        
+        subjects = DataManager.shared.subjects
         name = subjects[indexOfSubjects].name
         topics = subjects[indexOfSubjects].topics
         self.title = name
-        self.tableView.reloadData()
+        tableView.reloadData()
     }
     
 }
