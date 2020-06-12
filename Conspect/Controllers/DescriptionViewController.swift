@@ -12,14 +12,16 @@ import UIKit
 
 
 //  для теста
-var swiftBook = Subject(name: "Swiftbook", topic: [Topic(name: "Constraint", description: "dwwddjfkjvjjeijvjjekkdhjrjvkjekkv"),
-                                                   Topic(name: "Delegation", description: "dekgkrekgkerkgkrekgrekkger"),
-                                                   Topic(name: "SomeTopic", description: "dwefjejrjejjnjer")])
+var swiftBook = Subject(name: "Swiftbook",
+                        topic: [Topic(name: "Constraint", description: "dwwddjfkjvjjeijvjjekkdhjrjvkjekkv"),
+                                Topic(name: "Delegation", description: "dekgkrekgkerkgkrekgrekkger"),
+                                Topic(name: "SomeTopic", description: "dwefjejrjejjnjer")])
 
 
-var russianLanguge = Subject(name: "Русский язык", topic: [Topic(name: "Предожения", description: "Простые и сложные"),
-                                                           Topic(name: "Диепричастный оборот", description: "dwdwdwdwdwd"),
-                                                           Topic(name: "Наречие", description: "dwdwwddwdwdwd")])
+var russianLanguge = Subject(name: "Русский язык",
+                             topic: [Topic(name: "Предожения", description: "Простые и сложные"),
+                                     Topic(name: "Диепричастный оборот", description: "dwdwdwdwdwd"),
+                                     Topic(name: "Наречие", description: "dwdwwddwdwdwd")])
 
 
 
@@ -100,3 +102,5 @@ extension DescriptionViewController: AdditionViewControllerDelegate {
     }
     
 }
+
+
