@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Addition View Controller-->
+        <scene sceneID="bzE-yT-skZ">
+            <objects>
+                <viewController storyboardIdentifier="additionViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ajR-Yt-1Gu" customClass="AdditionViewController" customModule="Conspect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bMJ-zE-O5d">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lPk-aS-Izc">
+                                <rect key="frame" x="125.5" y="261" width="69" height="46"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="doneButton" destination="ajR-Yt-1Gu" eventType="touchUpInside" id="YDt-gd-F8z"/>
+                                    <segue destination="WGq-0F-wso" kind="unwind" unwindAction="unwindToTopicViewController:" id="BfC-bl-Xu5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="lPk-aS-Izc" firstAttribute="centerY" secondItem="bMJ-zE-O5d" secondAttribute="centerY" id="iuE-e3-uo2"/>
+                            <constraint firstItem="lPk-aS-Izc" firstAttribute="centerX" secondItem="bMJ-zE-O5d" secondAttribute="centerX" id="lLL-Qu-R8b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jFM-PD-dlM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dk7-GU-Ibu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="WGq-0F-wso" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="158" y="72"/>
+        </scene>
+    </scenes>
+</document>
