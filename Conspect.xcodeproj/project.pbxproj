@@ -56,15 +56,63 @@
 		1B9B16852492CFAF0075A586 /* Conspect */ = {
 			isa = PBXGroup;
 			children = (
-				1B9B168A2492CFAF0075A586 /* AdditionViewController.swift */,
-				1B9B16862492CFAF0075A586 /* AppDelegate.swift */,
-				1B9B16882492CFAF0075A586 /* SceneDelegate.swift */,
-				1B9B168C2492CFAF0075A586 /* AdditionViewController.storyboard */,
-				1B9B168F2492CFB30075A586 /* Assets.xcassets */,
-				1B9B16912492CFB30075A586 /* LaunchScreen.storyboard */,
-				1B9B16942492CFB30075A586 /* Info.plist */,
+				1BED75072494482E007069D8 /* Manager */,
+				1BED750624944825007069D8 /* Model */,
+				1BED75092494484F007069D8 /* Storyboard */,
+				1BED75082494483C007069D8 /* View */,
+				1BED750524944809007069D8 /* Controllers */,
+				1BED750A24944865007069D8 /* Supporting files */,
 			);
 			path = Conspect;
+			sourceTree = "<group>";
+		};
+		1BED750524944809007069D8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1B9B168A2492CFAF0075A586 /* AdditionViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		1BED750624944825007069D8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1BED75072494482E007069D8 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		1BED75082494483C007069D8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1BED75092494484F007069D8 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				1B9B168C2492CFAF0075A586 /* AdditionViewController.storyboard */,
+				1B9B16912492CFB30075A586 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		1BED750A24944865007069D8 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				1B9B16862492CFAF0075A586 /* AppDelegate.swift */,
+				1B9B16882492CFAF0075A586 /* SceneDelegate.swift */,
+				1B9B168F2492CFB30075A586 /* Assets.xcassets */,
+				1B9B16942492CFB30075A586 /* Info.plist */,
+			);
+			path = "Supporting files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +334,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34VDSPZYU9;
-				INFOPLIST_FILE = Conspect/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Conspect/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +352,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 34VDSPZYU9;
-				INFOPLIST_FILE = Conspect/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Conspect/Supporting files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
