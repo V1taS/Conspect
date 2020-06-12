@@ -29,17 +29,18 @@ var russianLanguge = Subject(name: "Русский язык",
 
 
 protocol DescriptionViewControllerDelegate {
-    func setNewHeaderAndFooter(header: String, footer: String)
+    func setNewNameOfCell(nameOfCell: String)
 }
 
 class DescriptionViewController: UIViewController {
 
     var subjects: [Subject] =  [swiftBook, russianLanguge]
     
-    var subjectIndex = 1
-    var topicIndex = 1
+
+    var indexOfSubjects: Int!
+    var indexOfTopics: Int!
     
-    //var delegate: DescriptionViewControllerDelegate!
+    var delegate: DescriptionViewControllerDelegate!
     
     
     //MARK: IB Outlets
@@ -52,9 +53,9 @@ class DescriptionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        headerLabel.text = subjects[subjectIndex].topic[topicIndex].name
+        headerLabel.text = subjects[indexOfSubjects].topic[indexOfTopics].name
         
-        descriptionTextView.text = subjects[subjectIndex].topic[topicIndex].description
+        descriptionTextView.text = subjects[indexOfSubjects].topic[indexOfTopics].description
         descriptionTextView.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 17)
         
         fontStepper.tintColor = .blue
@@ -68,14 +69,12 @@ class DescriptionViewController: UIViewController {
     
     //MARK: IB Actions
     @IBAction func goBack() {
-        subjects[subjectIndex].topic[topicIndex].name = headerLabel.text ?? ""
-        subjects[subjectIndex].topic[topicIndex].description = descriptionTextView.text
-        //delegate.setNewHeaderAndFooter(header: headerLabel.text ?? "", footer: descriptionTextView.text)
+        subjects[indexOfSubjects].topic[indexOfTopics].name = headerLabel.text ?? ""
+        subjects[indexOfSubjects].topic[indexOfTopics].description = descriptionTextView.text
         
-        print("Dismiss\n")
-        print("Topic name:\n\(subjects[subjectIndex].topic[topicIndex].name)\n")
-        print("Topic description:\n\(subjects[subjectIndex].topic[topicIndex].description)")
-        //  dismiss(animated: true)
+        delegate.setNewNameOfCell(nameOfCell: headerLabel.text ?? "")
+        
+        dismiss(animated: true)
     }
     
     @IBAction func changeFontSize(_ sender: UIStepper) {
