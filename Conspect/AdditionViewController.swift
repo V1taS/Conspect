@@ -8,7 +8,12 @@
 
 import UIKit
 
+protocol AdditionViewControllerDelegate {
+    func saveChangingDescriptionAndHeader(description: String, header: String)
+}
+
 class AdditionViewController: UIViewController {
+    
     
     @IBOutlet weak var buttonApplyOutlet: UIButton!
     
@@ -19,7 +24,12 @@ class AdditionViewController: UIViewController {
     @IBOutlet weak var discriptionTextField: UITextField!
     @IBOutlet weak var discriptionTextViewOutlet: UITextView!
     
+    var descriptionTextFieldSource: String!
+    var descriptionTextViewOutletSource: String!
+    
     var showContents = 0
+    
+    var delegate: AdditionViewControllerDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +37,14 @@ class AdditionViewController: UIViewController {
         
         hidenContents()
         roundsCorners()
-        showContents(num: showContents)
+        showContents(showContents)
     }
     
     @IBAction func buttonCancel(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
     @IBAction func buttonApplyAction() {
+        pressButtonChoice(showContents)
     }
     
     private func hidenContents() {
@@ -43,8 +54,19 @@ class AdditionViewController: UIViewController {
         discriptionStackView.isHidden = true
     }
     
-     func showContents(num: Int) {
-        switch num {
+    private func pressButtonChoice(_ showContents: Int) {
+        switch showContents {
+        case 1:
+            print("")
+        case 2:
+            print("")
+        default:
+            delegate.saveChangingDescriptionAndHeader(description: discriptionTextViewOutlet.text, header: discriptionTextField.text ?? "")
+        }
+    }
+    
+     func showContents(_ showContents: Int) {
+        switch showContents {
         case 1:
             subjectsTextField.isHidden = false
         case 2:

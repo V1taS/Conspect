@@ -10,7 +10,7 @@
 		1B9B16872492CFAF0075A586 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9B16862492CFAF0075A586 /* AppDelegate.swift */; };
 		1B9B16892492CFAF0075A586 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9B16882492CFAF0075A586 /* SceneDelegate.swift */; };
 		1B9B168B2492CFAF0075A586 /* AdditionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9B168A2492CFAF0075A586 /* AdditionViewController.swift */; };
-		1B9B168E2492CFAF0075A586 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B9B168C2492CFAF0075A586 /* Main.storyboard */; };
+		1B9B168E2492CFAF0075A586 /* AdditionViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B9B168C2492CFAF0075A586 /* AdditionViewController.storyboard */; };
 		1B9B16902492CFB30075A586 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B9B168F2492CFB30075A586 /* Assets.xcassets */; };
 		1B9B16932492CFB30075A586 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B9B16912492CFB30075A586 /* LaunchScreen.storyboard */; };
 		1BD1152C2492F18E006C2517 /* SubjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1152B2492F18E006C2517 /* SubjectsTableViewController.swift */; };
@@ -23,7 +23,7 @@
 		1B9B16862492CFAF0075A586 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B9B16882492CFAF0075A586 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1B9B168A2492CFAF0075A586 /* AdditionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionViewController.swift; sourceTree = "<group>"; };
-		1B9B168D2492CFAF0075A586 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1B9B168D2492CFAF0075A586 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AdditionViewController.storyboard; sourceTree = "<group>"; };
 		1B9B168F2492CFB30075A586 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B9B16922492CFB30075A586 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B9B16942492CFB30075A586 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -68,7 +68,7 @@
 				1BD1152F2492F1F3006C2517 /* DiscriptionViewController.swift */,
 				1B9B16862492CFAF0075A586 /* AppDelegate.swift */,
 				1B9B16882492CFAF0075A586 /* SceneDelegate.swift */,
-				1B9B168C2492CFAF0075A586 /* Main.storyboard */,
+				1B9B168C2492CFAF0075A586 /* AdditionViewController.storyboard */,
 				1B9B168F2492CFB30075A586 /* Assets.xcassets */,
 				1B9B16912492CFB30075A586 /* LaunchScreen.storyboard */,
 				1B9B16942492CFB30075A586 /* Info.plist */,
@@ -136,7 +136,7 @@
 			files = (
 				1B9B16932492CFB30075A586 /* LaunchScreen.storyboard in Resources */,
 				1B9B16902492CFB30075A586 /* Assets.xcassets in Resources */,
-				1B9B168E2492CFAF0075A586 /* Main.storyboard in Resources */,
+				1B9B168E2492CFAF0075A586 /* AdditionViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,12 +159,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1B9B168C2492CFAF0075A586 /* Main.storyboard */ = {
+		1B9B168C2492CFAF0075A586 /* AdditionViewController.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				1B9B168D2492CFAF0075A586 /* Base */,
 			);
-			name = Main.storyboard;
+			name = AdditionViewController.storyboard;
 			sourceTree = "<group>";
 		};
 		1B9B16912492CFB30075A586 /* LaunchScreen.storyboard */ = {
