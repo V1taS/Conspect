@@ -39,17 +39,28 @@ class DataManager {
         return [swift, russianLanguage]
     }
     
+    func addNewSubject(name: String, topics: [Topic]) {
+        print(#function)
+        subjects.append(Subject(name: name, topics: topics))
+    }
+    
     func addNewTopic(indexOfSubjects: Int, name: String, description: String) {
         print(#function)
-        print("\(name) - \(description)")
         var topics = subjects[indexOfSubjects].topics
         topics.append(Topic(name: name, description: description))
         subjects[indexOfSubjects].topics = topics
     }
     
-    func addNewSubject(name: String, topics: [Topic]) {
+    func removeSelectedTopic(indexOfSubjects: Int, indexOfTopics: Int) {
         print(#function)
-        print("\(name)")
-        subjects.append(Subject(name: name, topics: topics))
+        var topics = subjects[indexOfSubjects].topics
+        topics.remove(at: indexOfTopics)
+        subjects[indexOfSubjects].topics = topics
     }
+    
+    func removeSelectedSubject(indexOfSubjects: Int) {
+        print(#function)
+        subjects.remove(at: indexOfSubjects)
+    }
+    
 }

@@ -14,7 +14,7 @@ class SubjectsTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView.reloadData()
+        updateTableView()
     }
 
     // MARK: - Table view data source
@@ -32,6 +32,37 @@ class SubjectsTableViewController: UITableViewController {
         cell.textLabel?.text = subjects[indexPath.row].name
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Удалить"
+    }
+
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            showActionSheet(withTitle: subjects[indexPath.row].name, andMessage: "Удалить?", indexPath: indexPath)
+        }
+    }
+    
+    private func updateTableView() {
+        subjects = DataManager.shared.subjects
+        tableView.reloadData()
+    }
+    
+    private func showActionSheet(withTitle title: String, andMessage message: String, indexPath: IndexPath) {
+        let actionSheet = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+        let yesAction = UIAlertAction(title: "Да", style: .destructive) { _ in
+            DataManager.shared.removeSelectedSubject(indexOfSubjects: indexPath.row)
+            self.updateTableView()
+        }
+        let noAction = UIAlertAction(title: "Нет", style: .cancel)
+        actionSheet.addAction(yesAction)
+        actionSheet.addAction(noAction)
+        present(actionSheet, animated: true)
     }
 
     // MARK: - Navigation
@@ -53,7 +84,6 @@ class SubjectsTableViewController: UITableViewController {
 
 extension SubjectsTableViewController: AdditionSubjectViewControllerDelegate {
     func returnAdditionData(name: String) {
-        self.subjects = DataManager.shared.subjects
-        tableView.reloadData()
+        updateTableView()
     }
 }
