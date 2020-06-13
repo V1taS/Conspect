@@ -19,6 +19,7 @@ class TopicsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // заглушка для отладки автомномно
         if subjects.count == 0 {
             indexOfSubjects = 0
             subjects = [Subject(name: "Swift",
@@ -26,7 +27,6 @@ class TopicsTableViewController: UITableViewController {
                                          Topic(name: "Delegate", description: "Описание Delegate")
             ])]
         }
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,13 +35,9 @@ class TopicsTableViewController: UITableViewController {
         name = subjects[indexOfSubjects].name
         topics = subjects[indexOfSubjects].topics
         self.title = name        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         tableView.reloadData()
     }
-
+    
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -72,10 +68,21 @@ class TopicsTableViewController: UITableViewController {
             let additionVC = segue.destination as! AdditionViewController
             additionVC.indexOfSubjects = indexOfSubjects
             additionVC.showContents = 2
+            additionVC.delegateTopic = self
         default:
             print(segue.identifier ?? "")
         }
     }
+}
+
+extension TopicsTableViewController: AdditionTopicViewControllerDelegate {
+    func returnAdditionData(indexOfSubjects: Int, name: String, description: String) {
+        self.subjects = DataManager.shared.subjects
+        self.name = subjects[indexOfSubjects].name
+        self.topics = subjects[indexOfSubjects].topics
+        self.title = self.name
+        tableView.reloadData()
+    }    
 }
 
 extension TopicsTableViewController: DescriptionViewControllerDelegate {

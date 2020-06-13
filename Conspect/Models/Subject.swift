@@ -8,11 +8,11 @@
 
 
 struct Subject {
-    let name: String
-    let topics: [Topic]
+    var name: String
+    var topics: [Topic]
 }
 
 struct Topic {
-    let name: String
-    let description: String
+    var name: String
+    var description: String
 }

@@ -40,6 +40,7 @@ class SubjectsTableViewController: UITableViewController {
         case "additionSegue":
             let additionVC = segue.destination as! AdditionViewController
             additionVC.showContents = 1
+            additionVC.delegateSubject = self
         case "topicSegue" :
             guard let indexPath = tableView.indexPathForSelectedRow  else { return }
             let topicVC = segue.destination as! TopicsTableViewController
@@ -47,5 +48,12 @@ class SubjectsTableViewController: UITableViewController {
         default:
             print(segue.identifier ?? "")
         }
+    }
+}
+
+extension SubjectsTableViewController: AdditionSubjectViewControllerDelegate {
+    func returnAdditionData(name: String) {
+        self.subjects = DataManager.shared.subjects
+        tableView.reloadData()
     }
 }
