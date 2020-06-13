@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Description View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="DescriptionViewController" customModule="Conspect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4Uv-y8-VBB">
+                                <rect key="frame" x="16" y="98" width="343" height="549"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="Rz2-Lx-99X">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="26.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Заголовок" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DLC-G8-8XR">
+                                                <rect key="frame" x="0.0" y="0.0" width="114" height="26.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </stackView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wcq-hi-U3C">
+                                        <rect key="frame" x="0.0" y="46.5" width="343" height="502.5"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="127" translatesAutoresizingMaskIntoConstraints="NO" id="5NN-bx-7ux">
+                                <rect key="frame" x="16" y="20" width="343" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nLT-ZD-gFI">
+                                        <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Понятненько">
+                                                    <attributes>
+                                                        <font key="NSFont" metaFont="system" size="15"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <connections>
+                                            <action selector="goBack" destination="BYZ-38-t0r" eventType="touchUpInside" id="lLP-V7-r1n"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C6J-4P-sPp">
+                                        <rect key="frame" x="235" y="0.0" width="108" height="30"/>
+                                        <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
+                                        <state key="normal" title="Редактировать"/>
+                                        <connections>
+                                            <segue destination="nsk-3S-9Oh" kind="presentation" modalPresentationStyle="fullScreen" id="c9j-pP-StM"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yNe-Fi-L23">
+                                <rect key="frame" x="196.5" y="58" width="162.5" height="32"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Шрифт:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="At7-ka-LEY">
+                                        <rect key="frame" x="0.0" y="0.0" width="60.5" height="32"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="SPP-Ch-Fvh">
+                                        <rect key="frame" x="68.5" y="0.0" width="94" height="32"/>
+                                        <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <action selector="changeFontSize:" destination="BYZ-38-t0r" eventType="valueChanged" id="IAm-VB-IlH"/>
+                                        </connections>
+                                    </stepper>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Uv-y8-VBB" secondAttribute="bottom" constant="20" id="0Eb-UM-Qfj"/>
+                            <constraint firstItem="yNe-Fi-L23" firstAttribute="top" secondItem="5NN-bx-7ux" secondAttribute="bottom" constant="8" id="Cgo-hI-M6v"/>
+                            <constraint firstItem="5NN-bx-7ux" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="K29-7s-nU4"/>
+                            <constraint firstItem="5NN-bx-7ux" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bd7-Vb-zok"/>
+                            <constraint firstItem="4Uv-y8-VBB" firstAttribute="top" secondItem="SPP-Ch-Fvh" secondAttribute="bottom" constant="8" id="dYJ-oE-Cfr"/>
+                            <constraint firstItem="4Uv-y8-VBB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="in9-zs-KYH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5NN-bx-7ux" secondAttribute="trailing" constant="16" id="sC1-Iv-S1a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Uv-y8-VBB" secondAttribute="trailing" constant="16" id="tDv-1h-o82"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="yNe-Fi-L23" secondAttribute="trailing" constant="16" id="wKp-Nc-i3E"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="wcq-hi-U3C" id="kRj-Z3-rBW"/>
+                        <outlet property="fontStepper" destination="SPP-Ch-Fvh" id="NfO-LM-0Pz"/>
+                        <outlet property="headerLabel" destination="DLC-G8-8XR" id="icV-mS-puq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1932" y="497.90104947526243"/>
+        </scene>
+        <!--Addition View Controller-->
+        <scene sceneID="fya-6K-XAJ">
+            <objects>
+                <viewController id="nsk-3S-9Oh" customClass="AdditionViewController" customModule="Conspect" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uPa-fG-vE6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NEt-zR-nBE">
+                                <rect key="frame" x="249" y="20" width="110" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Добавить"/>
+                                <connections>
+                                    <action selector="addTextViewChanges" destination="nsk-3S-9Oh" eventType="touchUpInside" id="HQI-cI-yGD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CBa-pv-ShF">
+                                <rect key="frame" x="16" y="20" width="72" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Назад"/>
+                                <connections>
+                                    <action selector="backWithoutChanges" destination="nsk-3S-9Oh" eventType="touchUpInside" id="dRP-BF-iAS"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="4vA-ks-aC1">
+                                <rect key="frame" x="16" y="102" width="343" height="545"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="NEt-zR-nBE" firstAttribute="top" secondItem="rcp-pF-oJ5" secondAttribute="top" constant="20" id="2CO-xy-yk0"/>
+                            <constraint firstItem="4vA-ks-aC1" firstAttribute="leading" secondItem="rcp-pF-oJ5" secondAttribute="leading" constant="16" id="9f0-bN-JiJ"/>
+                            <constraint firstItem="NEt-zR-nBE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="CBa-pv-ShF" secondAttribute="trailing" constant="8" symbolic="YES" id="PlX-Tm-mz7"/>
+                            <constraint firstItem="rcp-pF-oJ5" firstAttribute="trailing" secondItem="4vA-ks-aC1" secondAttribute="trailing" constant="16" id="UHC-fJ-6y9"/>
+                            <constraint firstItem="rcp-pF-oJ5" firstAttribute="bottom" secondItem="4vA-ks-aC1" secondAttribute="bottom" constant="20" id="Ya5-nt-YWK"/>
+                            <constraint firstItem="4vA-ks-aC1" firstAttribute="top" secondItem="NEt-zR-nBE" secondAttribute="bottom" constant="40" id="bWq-Zg-UYv"/>
+                            <constraint firstItem="CBa-pv-ShF" firstAttribute="leading" secondItem="rcp-pF-oJ5" secondAttribute="leading" constant="16" id="gLL-iz-DpA"/>
+                            <constraint firstItem="CBa-pv-ShF" firstAttribute="top" secondItem="rcp-pF-oJ5" secondAttribute="top" constant="20" id="wRe-EK-CYY"/>
+                            <constraint firstItem="rcp-pF-oJ5" firstAttribute="trailing" secondItem="NEt-zR-nBE" secondAttribute="trailing" constant="16" id="yHs-nR-vra"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rcp-pF-oJ5"/>
+                    </view>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="4vA-ks-aC1" id="Rqy-a2-Vdd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mxE-Hy-l2y" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1380" y="-295.50224887556226"/>
+        </scene>
+    </scenes>
+</document>

@@ -2,7 +2,11 @@
 //  AdditionViewController.swift
 //  Conspect
 //
+<<<<<<< HEAD
 //  Created by Виталий Сосин on 11.06.2020.
+=======
+//  Created by Nikita on 6/12/20.
+>>>>>>> BegletskiyNA
 //  Copyright © 2020 Vitalii Sosin. All rights reserved.
 //
 
@@ -12,6 +16,7 @@ protocol AdditionViewControllerDelegate {
     func saveChangingDescriptionAndHeader(description: String, header: String)
 }
 
+<<<<<<< HEAD
 class AdditionViewController: UIViewController {
     
     @IBOutlet weak var buttonApplyOutlet: UIButton!
@@ -79,6 +84,42 @@ class AdditionViewController: UIViewController {
     private func roundsCorners() {
         buttonApplyOutlet.layer.cornerRadius = buttonApplyOutlet.frame.height / 4
     }
+=======
+
+class AdditionViewController: UIViewController {
+    
+    var descriptionTextFieldSource: String!
+    var descriptionTextViewOutletSource: String!
+    var showContents: Int!
+    
+    
+    
+    var delegate: AdditionViewControllerDelegate!
+
+    
+    @IBOutlet weak var descriptionTextView: UITextView!
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        descriptionTextView.text = descriptionTextFieldSource
+        
+    }
+    
+    
+    @IBAction func backWithoutChanges() {
+        dismiss(animated: true)
+    }
+    
+    @IBAction func addTextViewChanges() {
+        delegate.saveChangingDescriptionAndHeader(description: descriptionTextView.text, header: "dwdw")
+        dismiss(animated: true)
+    }
+    
+    
+>>>>>>> BegletskiyNA
 
 }
 
